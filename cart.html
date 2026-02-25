@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | BEAUTY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation (Same as index.html) -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">BEAUTY</a>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Skincare <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="face-wash.html">Face Wash</a></li>
+                        <li><a href="moisturizer.html">Moisturizer</a></li>
+                        <li><a href="sunscreen.html">Sunscreen</a></li>
+                        <li><a href="serum.html">Serum</a></li>
+                        <li><a href="face-mask.html">Face Mask</a></li>
+                        <li><a href="toner.html">Toner</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Makeup <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="foundation.html">Foundation</a></li>
+                        <li><a href="compact-powder.html">Compact Powder</a></li>
+                        <li><a href="lipstick.html">Lipstick</a></li>
+                        <li><a href="lip-balm.html">Lip Balm</a></li>
+                        <li><a href="kajal.html">Kajal</a></li>
+                        <li><a href="mascara.html">Mascara</a></li>
+                        <li><a href="eyeshadow.html">Eyeshadow</a></li>
+                        <li><a href="blush.html">Blush</a></li>
+                        <li><a href="highlighter.html">Highlighter</a></li>
+                        <li><a href="makeup-remover.html">Makeup Remover</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Haircare <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shampoo.html">Shampoo</a></li>
+                        <li><a href="conditioner.html">Conditioner</a></li>
+                        <li><a href="hair-clips-accessories.html">Clips & Accessories</a></li>
+                        <li><a href="hair-bands-styling-tools.html">Bands & Styling Tools</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav-icons">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 4rem 2rem;">
+        <div class="hero-content">
+            <h1>Your Shopping Bag</h1>
+            <p>Review your items and proceed to checkout.</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <div class="cart-container" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+
+        <!-- Cart Items -->
+        <div style="flex: 2; min-width: 300px; overflow-x: auto;">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items-container">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Checkout Summary -->
+        <div style="flex: 1; min-width: 300px;">
+            <div class="cart-summary">
+                <h3 style="margin-bottom: 1.5rem; text-align: left;">Order Summary</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Subtotal</span>
+                    <strong id="cart-total-amount">₹0</strong>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+
+                <form id="checkout-form" class="checkout-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Shipping Address" required>
+                    <input type="text" placeholder="City & PIN Code" required>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Proceed to
+                        Checkout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+            <p>&copy; 2026 BEAUTY Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

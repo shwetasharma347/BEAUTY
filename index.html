@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAUTY | Glow Naturally, Shine Confidently</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">BEAUTY</a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Skincare <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="face-wash.html">Face Wash</a></li>
+                        <li><a href="moisturizer.html">Moisturizer</a></li>
+                        <li><a href="sunscreen.html">Sunscreen</a></li>
+                        <li><a href="serum.html">Serum</a></li>
+                        <li><a href="face-mask.html">Face Mask</a></li>
+                        <li><a href="toner.html">Toner</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Makeup <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="foundation.html">Foundation</a></li>
+                        <li><a href="compact-powder.html">Compact Powder</a></li>
+                        <li><a href="lipstick.html">Lipstick</a></li>
+                        <li><a href="lip-balm.html">Lip Balm</a></li>
+                        <li><a href="kajal.html">Kajal</a></li>
+                        <li><a href="mascara.html">Mascara</a></li>
+                        <li><a href="eyeshadow.html">Eyeshadow</a></li>
+                        <li><a href="blush.html">Blush</a></li>
+                        <li><a href="highlighter.html">Highlighter</a></li>
+                        <li><a href="makeup-remover.html">Makeup Remover</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Haircare <i class="fas fa-chevron-down" style="font-size: 0.8em"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shampoo.html">Shampoo</a></li>
+                        <li><a href="conditioner.html">Conditioner</a></li>
+                        <li><a href="hair-clips-accessories.html">Clips & Accessories</a></li>
+                        <li><a href="hair-bands-styling-tools.html">Bands & Styling Tools</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav-icons">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Glow Naturally,<br>Shine Confidently</h1>
+            <p>Discover our curated collection of affordable, luxury cosmetics crafted for you.</p>
+            <a href="#featured" class="btn">Shop Now</a>
+            <a href="#about" class="btn btn-outline" style="margin-left: 1rem;">Explore Brand</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="container">
+        <h2 class="section-title">Featured Picks</h2>
+        <div class="product-grid" id="featured-grid">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </section>
+
+    <!-- Categories Banner -->
+    <section style="background: var(--card-bg); padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="face-wash.html" class="btn btn-outline">Skincare Basics</a>
+                <a href="lipstick.html" class="btn btn-outline">Vibrant Lips</a>
+                <a href="foundation.html" class="btn btn-outline">Flawless Face</a>
+                <a href="shampoo.html" class="btn btn-outline">Silky Hair</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container" style="background: var(--secondary-color); border-radius: 20px; padding: 4rem 2rem;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Loved by You</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="product-card" style="padding: 2rem; border: none;">
+                <div class="product-rating" style="margin-bottom: 1rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="margin-bottom: 1rem; font-style: italic;">"The skincare range completely transformed my routine! So soft and luxurious but perfectly priced."</p>
+                <h4>- Anusha K.</h4>
+            </div>
+            <div class="product-card" style="padding: 2rem; border: none;">
+                <div class="product-rating" style="margin-bottom: 1rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p style="margin-bottom: 1rem; font-style: italic;">"Absolutely love the rose gold packaging. The lipsticks are incredibly pigmented and hydrating!"</p>
+                <h4>- Priya M.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="margin-bottom: 1rem; display: block;">BEAUTY</a>
+                <p>Glow Naturally, Shine Confidently. Your daily dose of affordable luxury.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="face-wash.html">Shop Skincare</a></li>
+                    <li><a href="lipstick.html">Shop Makeup</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p style="margin-bottom: 1rem;">Subscribe to our newsletter for exclusive offers and updates.</p>
+                <form style="display: flex; gap: 0.5rem;" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Email Address" required style="flex: 1; padding: 0.5rem; border-radius: 4px;">
+                    <button type="submit" class="btn" style="padding: 0.5rem 1rem; border-radius: 4px;">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BEAUTY Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuickView()">&times;</button>
+            <img src="" alt="Product Image" id="modal-img" class="modal-image">
+            <div class="modal-details">
+                <h2 id="modal-title" style="margin-bottom: 1rem; font-size: 2rem;"></h2>
+                <div id="modal-price" style="font-size: 1.5rem; color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;"></div>
+                <p id="modal-desc" style="opacity: 0.8; margin-bottom: 2rem; line-height: 1.8;"></p>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Size/Variant (If applicable):</strong>
+                    <select class="filter-select" style="margin-top: 0.5rem; display: block; width: 100%;">
+                        <option>Default Standard</option>
+                    </select>
+                </div>
+
+                <button class="btn" id="modal-add-btn" style="width: 100%;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>

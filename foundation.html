@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='category' content='Foundation'>
+    <title>Foundation | BEAUTY</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class='nav-container'>
+            <a href='index.html' class='logo'>BEAUTY</a>
+            
+            <button class='mobile-menu-btn' id='mobile-menu-btn'>
+                <i class='fas fa-bars'></i>
+            </button>
+
+            <ul class='nav-links'>
+                <li><a href='index.html'>Home</a></li>
+                <li class='dropdown'>
+                    <a href='#'>Skincare <i class='fas fa-chevron-down' style='font-size: 0.8em'></i></a>
+                    <ul class='dropdown-menu'>
+                        <li><a href='face-wash.html'>Face Wash</a></li>
+                        <li><a href='moisturizer.html'>Moisturizer</a></li>
+                        <li><a href='sunscreen.html'>Sunscreen</a></li>
+                        <li><a href='serum.html'>Serum</a></li>
+                        <li><a href='face-mask.html'>Face Mask</a></li>
+                        <li><a href='toner.html'>Toner</a></li>
+                    </ul>
+                </li>
+                <li class='dropdown'>
+                    <a href='#'>Makeup <i class='fas fa-chevron-down' style='font-size: 0.8em'></i></a>
+                    <ul class='dropdown-menu'>
+                        <li><a href='foundation.html'>Foundation</a></li>
+                        <li><a href='compact-powder.html'>Compact Powder</a></li>
+                        <li><a href='lipstick.html'>Lipstick</a></li>
+                        <li><a href='lip-balm.html'>Lip Balm</a></li>
+                        <li><a href='kajal.html'>Kajal</a></li>
+                        <li><a href='mascara.html'>Mascara</a></li>
+                        <li><a href='eyeshadow.html'>Eyeshadow</a></li>
+                        <li><a href='blush.html'>Blush</a></li>
+                        <li><a href='highlighter.html'>Highlighter</a></li>
+                        <li><a href='makeup-remover.html'>Makeup Remover</a></li>
+                    </ul>
+                </li>
+                <li class='dropdown'>
+                    <a href='#'>Haircare <i class='fas fa-chevron-down' style='font-size: 0.8em'></i></a>
+                    <ul class='dropdown-menu'>
+                        <li><a href='shampoo.html'>Shampoo</a></li>
+                        <li><a href='conditioner.html'>Conditioner</a></li>
+                        <li><a href='hair-clips-accessories.html'>Clips & Accessories</a></li>
+                        <li><a href='hair-bands-styling-tools.html'>Bands & Styling Tools</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class='nav-icons'>
+                <button id='theme-toggle' aria-label='Toggle Theme'>
+                    <i class='fas fa-moon'></i>
+                </button>
+                <a href='cart.html' aria-label='Cart'>
+                    <i class='fas fa-shopping-bag'></i>
+                    <span class='cart-count'>0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header - Theme Banner -->
+    <section class='hero' style='padding: 4rem 2rem;'>
+        <div class='hero-content'>
+            <h1>Foundation</h1>
+            <p>Explore our premium collection of Foundation.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class='container'>
+        <!-- Controls: Filter and Search -->
+        <div class='controls'>
+            <div class='search-bar'>
+                <i class='fas fa-search' style='margin-right: 10px; color: var(--text-color);'></i>
+                <input type='text' id='search-input' placeholder='Search Foundation...'>
+            </div>
+            
+            <select class='filter-select' id='sort-products'>
+                <option value='default'>Sort by: Featured</option>
+                <option value='low'>Price: Low to High</option>
+                <option value='high'>Price: High to Low</option>
+            </select>
+        </div>
+
+        <!-- Product Grid -->
+        <div class='product-grid' id='product-grid'>
+            <!-- Dynamically populated by JS based on meta category -->
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class='modal-overlay' id='quick-view-modal'>
+        <div class='modal-content'>
+            <button class='modal-close' onclick='closeQuickView()'>&times;</button>
+            <img src='' alt='Product Image' id='modal-img' class='modal-image'>
+            <div class='modal-details'>
+                <h2 id='modal-title' style='margin-bottom: 1rem; font-size: 2rem;'></h2>
+                <div id='modal-price' style='font-size: 1.5rem; color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;'></div>
+                <p id='modal-desc' style='opacity: 0.8; margin-bottom: 2rem; line-height: 1.8;'></p>
+                
+                <div style='margin-bottom: 1.5rem;'>
+                    <strong>Size/Variant:</strong>
+                    <select class='filter-select' style='margin-top: 0.5rem; display: block; width: 100%;'>
+                        <option>Default Standard</option>
+                    </select>
+                </div>
+
+                <button class='btn' id='modal-add-btn' style='width: 100%;'>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class='footer-bottom' style='border-top: none; padding-top: 0;'>
+            <p>&copy; 2026 BEAUTY Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id='scroll-top' title='Go to top'><i class='fas fa-arrow-up'></i></button>
+
+    <script src='script.js'></script>
+</body>
+</html>
