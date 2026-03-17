@@ -1,28 +1,28 @@
 // Product Database Generator
 const categories = [
-    "Face Wash", "Moisturizer", "Sunscreen", "Serum", "Face Mask", 
-    "Toner", "Foundation", "Compact Powder", "Lipstick", "Lip Balm", 
-    "Kajal", "Mascara", "Eyeshadow", "Blush", "Highlighter", 
-    "Makeup Remover", "Shampoo", "Conditioner", "Hair Clips & Accessories", 
+    "Face Wash", "Moisturizer", "Sunscreen", "Serum", "Face Mask",
+    "Toner", "Foundation", "Compact Powder", "Lipstick", "Lip Balm",
+    "Kajal", "Mascara", "Eyeshadow", "Blush", "Highlighter",
+    "Makeup Remover", "Shampoo", "Conditioner", "Hair Clips & Accessories",
     "Hair Bands & Styling Tools"
 ];
 
 // Generate placeholder products
 let allProducts = [];
 categories.forEach(cat => {
-    for(let i=1; i<=8; i++) {
+    for (let i = 1; i <= 8; i++) {
         let price = Math.floor(Math.random() * 800) + 199; // ₹199 to ₹999
         let rating = (Math.random() * 1 + 4).toFixed(1); // 4.0 to 5.0
         let imageKeywords = cat.toLowerCase().includes('hair') ? 'haircare,accessories' : 'skincare,cosmetics,makeup';
-        
+
         allProducts.push({
             id: `${cat.toLowerCase().replace(/[\s&]+/g, '-')}-${i}`,
-            name: `${cat} ${['Premium', 'Essentials', 'Glow', 'Natural', 'Luxe'][Math.floor(Math.random()*5)]}`,
+            name: `${cat} ${['Premium', 'Essentials', 'Glow', 'Natural', 'Luxe'][Math.floor(Math.random() * 5)]}`,
             category: cat,
             price: price,
             // Using a stable unsplash image proxy or stable IDs since source.unsplash is deprecated
             // We use a predefined set of beautiful aesthetic cosmetic images
-            image: `https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80`, 
+            image: `https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80`,
             rating: rating,
             description: `Experience the natural glow with our luxury ${cat.toLowerCase()}. Handcrafted for your beauty.`
         });
@@ -46,7 +46,7 @@ const modalOverlay = document.getElementById('quick-view-modal');
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     updateCartCount();
-    
+
     // Determine page context
     const categoryMeta = document.querySelector('meta[name="category"]');
     if (categoryMeta) {
@@ -82,7 +82,7 @@ function initTheme() {
 }
 
 function updateThemeIcon(theme) {
-    if(!themeToggle) return;
+    if (!themeToggle) return;
     if (theme === 'dark') {
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     } else {
@@ -94,7 +94,7 @@ function updateThemeIcon(theme) {
 function renderProducts(products, container = productGrid) {
     if (!container) return;
     container.innerHTML = '';
-    
+
     if (products.length === 0) {
         container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No products found.</p>';
         return;
@@ -124,7 +124,7 @@ function renderProducts(products, container = productGrid) {
 
 function getStars(rating) {
     let stars = '';
-    for(let i=1; i<=5; i++) {
+    for (let i = 1; i <= 5; i++) {
         if (i <= Math.floor(rating)) stars += '<i class="fas fa-star"></i>';
         else if (i - 0.5 <= rating) stars += '<i class="fas fa-star-half-alt"></i>';
         else stars += '<i class="far fa-star"></i>';
@@ -143,7 +143,7 @@ function addToCart(productId) {
     } else {
         cart.push({ ...product, quantity: 1 });
     }
-    
+
     localStorage.setItem('beauty_cart', JSON.stringify(cart));
     updateCartCount();
     showToast(`${product.name} added to cart!`);
@@ -170,7 +170,7 @@ function openQuickView(productId) {
 }
 
 function closeQuickView() {
-    if(modalOverlay) {
+    if (modalOverlay) {
         modalOverlay.classList.remove('active');
     }
 }
@@ -202,7 +202,7 @@ function showToast(message) {
     toast.className = 'toast';
     toast.textContent = message;
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
         toast.classList.add('show');
     }, 10);
@@ -232,9 +232,9 @@ if (scrollTopBtn) {
 function renderCart() {
     const cartContainer = document.getElementById('cart-items-container');
     const cartTotalAmount = document.getElementById('cart-total-amount');
-    
+
     if (!cartContainer || !cartTotalAmount) return;
-    
+
     cartContainer.innerHTML = '';
     let total = 0;
 
@@ -247,7 +247,7 @@ function renderCart() {
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
+
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>
@@ -300,7 +300,7 @@ const checkoutForm = document.getElementById('checkout-form');
 if (checkoutForm) {
     checkoutForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        if(cart.length === 0) {
+        if (cart.length === 0) {
             showToast('Your cart is empty!');
             return;
         }
@@ -312,3 +312,60 @@ if (checkoutForm) {
         checkoutForm.reset();
     });
 }
+
+// ========== Chatbase Floating Widget ==========
+(function injectChatbot() {
+    // Create toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'chatbot-toggle';
+    toggleBtn.setAttribute('aria-label', 'Open Beauty Assistant');
+    toggleBtn.setAttribute('title', 'Chat with Beauty Assistant');
+    toggleBtn.innerHTML = `
+        <i class="fas fa-comment-dots chat-icon"></i>
+        <i class="fas fa-times close-icon"></i>
+    `;
+
+    // Create chat panel
+    const panel = document.createElement('div');
+    panel.id = 'chatbot-panel';
+    panel.innerHTML = `
+        <div class="chatbot-header">
+            <div class="chatbot-header-avatar">
+                <i class="fas fa-spa"></i>
+            </div>
+            <div class="chatbot-header-info">
+                <h4>BEAUTY Assistant</h4>
+                <p><span class="chatbot-header-dot"></span>Online — ask me anything!</p>
+            </div>
+        </div>
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/tsGCXQWm3ok6LpPohwoPx"
+            width="100%"
+            style="height: 100%; min-height: 700px"
+            frameborder="0"
+            allow="microphone; clipboard-write"
+            title="BEAUTY AI Assistant"
+        ></iframe>
+    `;
+
+    document.body.appendChild(panel);
+    document.body.appendChild(toggleBtn);
+
+    // Toggle open/close
+    toggleBtn.addEventListener('click', () => {
+        const isOpen = panel.classList.toggle('open');
+        toggleBtn.classList.toggle('open', isOpen);
+        toggleBtn.setAttribute('aria-label', isOpen ? 'Close Beauty Assistant' : 'Open Beauty Assistant');
+    });
+
+    // Close panel when clicking outside
+    document.addEventListener('click', (e) => {
+        if (panel.classList.contains('open') &&
+            !panel.contains(e.target) &&
+            e.target !== toggleBtn &&
+            !toggleBtn.contains(e.target)) {
+            panel.classList.remove('open');
+            toggleBtn.classList.remove('open');
+        }
+    });
+})();
